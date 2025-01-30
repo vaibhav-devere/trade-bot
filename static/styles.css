@@ -1,0 +1,76 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.chart {
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background: white;
+}
+
+.analysis ul {
+    list-style: none;
+    padding: 0;
+}
+
+.analysis li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.recommendation {
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.strong-buy {
+    background: #d4edda;
+    color: #155724;
+}
+
+.strong-sell {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.hold {
+    background: #fff3cd;
+    color: #856404;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f8f9fa;
+}
+
+.positive {
+    color: #28a745;
+}
+
+.negative {
+    color: #dc3545;
+}
+
+.error {
+    color: #dc3545;
+    text-align: center;
+    padding: 50px 0;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ strategy }} Candidates</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Top {{ strategy }} Candidates</h1>
+    <table>
+        <tr>
+            <th>Symbol</th>
+            <th>RSI</th>
+            <th>Trend</th>
+            <th>Volatility</th>
+        </tr>
+        {% for symbol, analysis in stocks %}
+        <tr>
+            <td><a href="/{{ strategy|lower }}/{{ symbol }}">{{ symbol }}</a></td>
+            <td class="{% if analysis.rsi < 35 %}positive{% elif analysis.rsi > 65 %}negative{% endif %}">
+                {{ analysis.rsi }}
+            </td>
+            <td class="{% if analysis.trend == 'Bullish' %}positive{% else %}negative{% endif %}">
+                {{ analysis.trend }}
+            </td>
+            <td>{{ analysis.volatility }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>

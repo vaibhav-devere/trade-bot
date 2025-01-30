@@ -1,0 +1,17 @@
+trading-bot/
+├── app.py
+├── config.py
+├── requirements.txt
+├── Procfile
+├── README.md
+├── ai_updater.py
+├── helpers/
+│   ├── __init__.py
+│   ├── analysis.py
+│   └── charting.py
+├── templates/
+│   ├── analysis.html
+│   ├── error.html
+│   └── scan.html
+└── static/
+    └── styles.csss

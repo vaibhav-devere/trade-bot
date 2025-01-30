@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>{{ symbol }} - {{ strategy }}</h1>
+
+    <div class="chart">
+        <img src="data:image/png;base64,{{ chart }}" alt="Price Chart">
+    </div>
+
+    <div class="analysis">
+        <h2>Technical Indicators</h2>
+        <ul>
+            <li>RSI: {{ analysis.indicators.rsi }}</li>
+            <li>MACD: {{ analysis.indicators.macd }}</li>
+            <li>50-Day MA: ₹{{ analysis.indicators.sma_50 }}</li>
+            <li>200-Day MA: ₹{{ analysis.indicators.sma_200 }}</li>
+            <li>Volatility: {{ analysis.indicators.volatility }}</li>
+        </ul>
+
+        <h2>Patterns Detected</h2>
+        <ul>
+            <li>Head & Shoulders: {% if analysis.patterns.head_shoulders %}✅{% else %}❌{% endif %}</li>
+            <li>Bullish Engulfing: {% if analysis.patterns.engulfing %}✅{% else %}❌{% endif %}</li>
+        </ul>
+
+        <h2>Recommendation</h2>
+        <div class="recommendation {{ analysis.recommendation|lower|replace(' ', '-') }}">
+            {{ analysis.recommendation }}
+        </div>
+    </div>
+</div>
+</body>
+</html>
